@@ -1,0 +1,13 @@
+<% @posts.each do |post| %> 
+	<div class="post">
+		<h2><%= post.title %></h2>
+		
+		<p class="post_infos">
+			<% if(post.updated_at != post.created_at) %>
+				<span class="right">Last modification : <%= post.updated_at_formatted %></span>
+			<% end %>
+			Created by <strong><%= post.author %></strong> at <%= post.created_at_formatted %>
+		</p>
+		<div class="post_content"><%= post.body %></div>
+	</div>
+<% end %>
