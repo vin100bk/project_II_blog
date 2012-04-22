@@ -1,0 +1,16 @@
+<%= form_for @post do |f| %>
+	<div class="form_field<%= is_field_error(@post, :title) %>">
+		<%= get_field_error_message(@post, :title) %>
+		<%= f.label :title %>
+		<%= f.text_field :title %>
+	</div>
+	
+	<div class="form_field<%= is_field_error(@post, :body) %>">
+		<%= get_field_error_message(@post, :title) %>
+		<%= f.label :body %>
+		<%= f.text_area :body %>
+	</div>
+	<div class="form_submit">
+		<%= f.submit "Save" %>
+	</div>
+<% end %>

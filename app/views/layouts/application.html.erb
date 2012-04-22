@@ -9,7 +9,13 @@
 </head>
 <body>
 
-<%= yield %>
+	<% unless flash.empty? %>
+		<% flash.each do | key, value | %>
+			<p class="<%= key %>"><%= value %></p>
+		<% end %>
+	<% end %>
+
+	<%= yield %>
 
 </body>
 </html>
