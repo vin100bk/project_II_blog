@@ -1,0 +1,8 @@
+Scénarios développés dans la partie 2 du projet :
+ - Connexion
+ - Déconnexion
+ - Ajout de post
+ - Liste des posts
+
+La connexion n'utilise pas le système d'authentification développée dans la première partie car le redirect_to http:// ne passe pas les tests.
+La connexion se fait donc statiquement (identifié comme "test"). Néanmoins la connexion via le système d'authentification marche (je répète, pas avec les tests), il suffit de décommenter le code dans session_controller.
