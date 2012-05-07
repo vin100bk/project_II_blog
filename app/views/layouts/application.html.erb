@@ -9,9 +9,15 @@
 </head>
 <body>
 
+	<% if connected? %>
+		<p>Hello <strong><%= session[:current_member] %></strong> - <%= link_to "Home", root_path %> - <%= link_to "Logout", session_destroy_path %></p>
+	<% else %>
+		<p>Your are not connected. <%= link_to "Login", new_session_path %></p>
+	<% end %>
+
 	<% unless flash.empty? %>
 		<% flash.each do | key, value | %>
-			<p class="<%= key %>"><%= value %></p>
+			<p class="<%= key %>"><%= value.html_safe %></p>
 		<% end %>
 	<% end %>
 

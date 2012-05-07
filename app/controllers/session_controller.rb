@@ -16,4 +16,9 @@ class SessionController < ApplicationController
 		session[:current_member] = 'test'
 		redirect_to root_path
 	end
+	
+	def destroy
+		session[:current_member] = nil
+		redirect_to root_path
+	end
 end

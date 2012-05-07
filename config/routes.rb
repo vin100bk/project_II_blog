@@ -57,4 +57,5 @@ ProjectIiBlog::Application.routes.draw do
   # match ':controller(/:action(/:id))(.:format)'
   resources :posts
   resources :session, :only => [:new]
+  match "/session/destroy" => "session#destroy"
 end

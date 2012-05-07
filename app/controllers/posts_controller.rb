@@ -7,11 +7,11 @@ class PostsController < ApplicationController
 	
 	def new
 		if connected?
+			@new_form = true
 			@post = Post.new
 		else
 			not_connected
 		end
-		
 	end
 	
 	def create
@@ -34,7 +34,7 @@ class PostsController < ApplicationController
 	end
 	
 	def not_connected
-		flash[:error] = 'You should be registered to add a post.'
+		flash[:error] = 'You should be registered to add a post. <a href="' + new_session_path + '">Login</a>.'
 		redirect_to root_path
 	end
 end

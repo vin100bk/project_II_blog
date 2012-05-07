@@ -61,7 +61,7 @@ describe PostsController do
 		context "Not connected" do
 			it "Should redirect and display an error" do
 				post 'create', {'post' => @params}
-				flash[:error].should == 'You should be registered to add a post.'
+				flash[:error].should == 'You should be registered to add a post. <a href="/session/new">Login</a>.'
 				response.should redirect_to root_path
 			end
 		end
